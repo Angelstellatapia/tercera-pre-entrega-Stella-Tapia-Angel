@@ -1,3 +1,5 @@
 {
-    "codeium.enableSearch": true
+    "codeium.enableSearch": false,
+    "codeium.enableCodeLens": false,
+    "codeium.detectProxy": false
 }
