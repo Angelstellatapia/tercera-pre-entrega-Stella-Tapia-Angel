@@ -8,5 +8,13 @@
 </head>
 <body>
     <a href="{% url 'home:index' %}">inicio</a>
+    <h1>Lista de productos</h1>
+<ul>
+{% for producto in productos %}
+    <li>{{ producto.nombre }} - {{ producto.descripcion }} - ${{ producto.precio }}</li>
+{% empty %}
+    <li>No hay productos disponibles.</li>
+{% endfor %}
+</ul>
 </body>
 </html>

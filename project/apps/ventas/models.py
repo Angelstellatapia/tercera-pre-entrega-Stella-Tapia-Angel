@@ -10,4 +10,4 @@ class Pedido(models.Model):
     fecha = models.DateField(auto_now_add=True)
 
     def __str__(self):
-        return f"Pedido de {self.usuario} - {self.producto}"
+        return f"Pedido de {self.cliente} - {self.producto}"
