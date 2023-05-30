@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from cliente.models import cliente
-from cliente.form import clienteForm
+from .models import Usuario
+from .form import clienteForm
 
 # Create your views here.
 def index   (request) :
@@ -8,8 +8,8 @@ def index   (request) :
 
 
 def lista_usuarios(request):
-    cliente_registrado = cliente.objects.all()
-    return render(request, 'cliente/index.html', {'cliente':cliente_registrado})
+    cliente_registrado = Usuario.objects.all()
+    return render(request, 'cliente/index.html', {'Usuario':cliente_registrado})
 
 def cliente_create(request):
     if request.method == 'POST':
@@ -22,7 +22,7 @@ def cliente_create(request):
     return render(request, 'cliente/crear-actualizar.html', {'form': form})
 
 def cliente_update(request, pk):
-    usuario = cliente.objects.get(pk=pk)
+    usuario = Usuario.objects.get(pk=pk)
     if request.method == 'POST':
         form = clienteForm(request.POST, instance=usuario)
         if form.is_valid():

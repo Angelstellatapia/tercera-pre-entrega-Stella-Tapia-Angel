@@ -1,5 +1,5 @@
 from django import forms
-from ventas.models import Pedido
+from .models import Pedido
 
 class PedidoForm(forms.ModelForm):
     class Meta:

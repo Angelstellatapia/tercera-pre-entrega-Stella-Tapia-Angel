@@ -1,8 +1,9 @@
-from django.urls import path
-from . import views
+from django.urls import path 
+from .views import index, cliente_create , lista_usuarios , cliente_update
 urlpatterns = [
-    path('', views.index , name='index'),
-    path('crear/', views.cliente_create, name='crear'),
-    path('actualizar/', views.cliente_update , name='actualizar'),
-     
+    path('', index , name='index'),
+  
+    path('lista/', lista_usuarios, name='index'),
+    path('crear/', cliente_create, name='crear-actualizar'),
+    path('actualizar/<int:pk>/', cliente_update, name='crear-actualizar'),
     ]

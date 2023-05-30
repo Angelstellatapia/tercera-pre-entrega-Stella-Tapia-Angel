@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from ventas.models import Pedido
-from ventas.form import PedidoForm
+from .models import Pedido
+from .form import PedidoForm
 
 # Create your views here.
 def index   (request) :
@@ -20,7 +20,7 @@ def pedido_create(request):
             return redirect('pedido:index')
     else:
         form = PedidoForm()
-    return render(request, 'ventas/crear-actualizar.html', {'form': form})
+    return render(request, 'ventas/index.html', {'form': form})
 
 def pedido_update(request, pk):
     pedido = Pedido.objects.get(pk=pk)
@@ -31,4 +31,4 @@ def pedido_update(request, pk):
             return redirect('pedido:index')
     else:
         form = PedidoForm(instance=pedido)
-    return render(request, 'ventas/crear-actualizar.html', {'form': form})
+    return render(request, 'ventas/index.html', {'form': form})

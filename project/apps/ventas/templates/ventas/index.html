@@ -11,5 +11,10 @@
         <li>No hay pedidos disponibles.</li>
     {% endfor %}
     </ul>
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Guardar</button>
+      </form>
 {% endblock contenido %}
 

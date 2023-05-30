@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from productos.form import ProductoForm
-from productos.models import Producto
+from .form import ProductoForm
+from .models import Producto
 
 def index   (request) :
     return render(request, 'productos/index.html',)
