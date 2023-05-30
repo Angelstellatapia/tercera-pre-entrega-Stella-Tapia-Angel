@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>inicio</title>
-</head>
-<body>
-    <h1>inicio</h1>
-    <h2>menu de pociones</h2>
-    <a href="{% url 'cliente:index' %}">c</a>
-    <a href="{% url 'productos:index' %}">p</a>
-    <a href="{% url 'ventas:index' %}">v</a>
-</body>
-</html>
+{% extends 'home/base.html' %}
+
+
+{% block contenido %}
+<h1>inicio</h1>
+<h2>menu de pociones</h2>
+<a href="{% url 'cliente:index' %}">c</a>
+<a href="{% url 'productos:index' %}">p</a>
+<a href="{% url 'ventas:index' %}">v</a>
+
+{% endblock contenido %}
+
