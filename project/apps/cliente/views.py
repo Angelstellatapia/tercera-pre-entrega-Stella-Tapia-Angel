@@ -19,7 +19,7 @@ def cliente_create(request):
             return redirect('cliente:index')
     else:
         form = clienteForm()
-    return render(request, 'cliente/crear-actualizar.html', {'form': form})
+    return render(request, 'cliente/index.html', {'form': form})
 
 def cliente_update(request, pk):
     usuario = Usuario.objects.get(pk=pk)
@@ -30,4 +30,4 @@ def cliente_update(request, pk):
             return redirect('cliente:index')
     else:
         form = clienteForm(instance=usuario)
-    return render(request, 'cliente/crear-actualizar.html', {'form': form})
+    return render(request, 'cliente/index.html', {'form': form})

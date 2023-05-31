@@ -9,4 +9,9 @@
         <li>No hay productos disponibles.</li>
     {% endfor %}
     </ul>
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">crear</button>
+      </form>
 {% endblock contenido %}
