@@ -8,8 +8,8 @@ def index   (request) :
 
 
 def lista_usuarios(request):
-    cliente_registrado = Usuario.objects.all()
-    return render(request, 'cliente/index.html', {'Usuario':cliente_registrado})
+    usuario= Usuario.objects.all()
+    return render(request, 'cliente/index.html', {'Usuario':usuario})
 
 def cliente_create(request):
     if request.method == 'POST':

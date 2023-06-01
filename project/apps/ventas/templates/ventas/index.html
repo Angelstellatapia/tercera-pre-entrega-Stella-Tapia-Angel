@@ -6,7 +6,7 @@
         <h1>Lista de pedidos</h1>
     <ul>
     {% for pedido in pedidos %}
-        <li>Pedido de {{ pedido.cliente}} - {{ pedido.producto }} - Cantidad: {{ pedido.cantidad }}</li>
+        <li>Pedido de {{ pedido.usuario}} - {{ pedido.producto }} - Cantidad: {{ pedido.cantidad }}</li>
     {% empty %}
         <li>No hay pedidos disponibles.</li>
     {% endfor %}

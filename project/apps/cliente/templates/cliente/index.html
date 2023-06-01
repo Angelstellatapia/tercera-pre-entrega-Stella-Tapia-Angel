@@ -10,8 +10,8 @@
     <a href="{% url 'home:index' %}">inicio</a>
     <h1>Lista de clientes</h1>
 <ul>
-{% for usuario in usuarios %}
-    <li>{{ cliente.nombre }} - {{ cliente.edad }} años - {{ cliente.correo }}</li>
+{% for usuarios in usuario %}
+    <li>{{ usuarios.nombre }} - {{ usuarios.direccion }}  - {{ usuarios.telefono }}</li>
 {% empty %}
     <li>No hay clientes disponibles.</li>
 {% endfor %}
