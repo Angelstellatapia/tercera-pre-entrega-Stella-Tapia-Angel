@@ -2,11 +2,13 @@
 
 
 {% block contenido %}
-<h1>inicio</h1>
-<h2>menu de pociones</h2>
-<a href="{% url 'cliente:index' %}">c</a>
-<a href="{% url 'productos:index' %}">p</a>
-<a href="{% url 'pedido:index' %}">v</a>
+<h1>Autos mundo</h1>
+<h2>inicio</h2>
 
+
+<li><a href="{% url 'cliente:index' %}">clientes</a></li>
+<li> <a href="{% url 'productos:index' %}">productos</a></li>
+<li> <a href="{% url 'pedido:index' %}">ventas o pedidos</a></li>
+    
 {% endblock contenido %}
 

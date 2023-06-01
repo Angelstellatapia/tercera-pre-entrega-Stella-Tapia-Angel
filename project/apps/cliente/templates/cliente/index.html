@@ -1,26 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <a href="{% url 'home:index' %}">inicio</a>
-    <h1>Lista de clientes</h1>
-<ul>
-{% for usuarios in usuario %}
-    <li>{{ usuarios.nombre }} - {{ usuarios.direccion }}  - {{ usuarios.telefono }}</li>
-{% empty %}
-    <li>No hay clientes disponibles.</li>
-{% endfor %}
+{% extends 'home/base.html' %}
+{% block contenido %}
 
-</ul>
+<a href="{% url 'home:index' %}">inicio</a>
+<h1>Lista de clientes</h1>
+<ul>
+    {% for usuarios in usuario %}
+        <li>{{ usuarios.nombre }} - {{ usuarios.direccion }}  - {{ usuarios.telefono }}</li>
+    {% empty %}
+        <li>No hay clientes disponibles.</li>
+    {% endfor %}
+    
+    </ul>
 <form method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit">Guardar</button>
-  </form>
-</body>
-</html>
+{% csrf_token %}
+{{form.as_p}}
+<button type="submit">Guardar</button>
+</form>
+{% endblock contenido %}

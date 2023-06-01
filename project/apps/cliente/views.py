@@ -4,12 +4,15 @@ from .form import clienteForm
 
 # Create your views here.
 def index   (request) :
-    return render(request, 'cliente/index.html',)
+    
+    return render(request, 'cliente/index.html', )
 
 
 def lista_usuarios(request):
     usuario= Usuario.objects.all()
-    return render(request, 'cliente/index.html', {'Usuario':usuario})
+    
+    dato={'usuario':usuario}
+    return render(request, 'cliente/index.html', dato)
 
 def cliente_create(request):
     if request.method == 'POST':
